@@ -1,27 +1,8 @@
-name: CI
-
-on:
-  push:
-    branches:
-      - 'feature/**'
-  pull_request:
-    branches:
-      - main
+name: Hello
+on: push
 
 jobs:
-  deploy:
+  hello:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-
-      # - name: Install SSH Key for Deploy
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     key: ${{ secrets.SK }}
-      #     host: ${{secrets.SSH_HOST}}
-      #     username: ${{secrets.SSH_USERNAME}}
-      #     port: ${{secrets.SSH_PORT}}
-      #     script: |
-      #       cd githubactions_deploy_rensyuu
-      #       git pull origin main  
+      - run: echo "Hello"

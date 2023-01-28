@@ -9,8 +9,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
+
       - name: Install SSH Key for Deploy
         uses: appleboy/ssh-action@master
         with:
@@ -19,5 +21,5 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
           port: ${{secrets.SSH_PORT}}
           script: |
-            cd sakura-app
-            git pull origin main    
+            cd githubactions_deploy_rensyuu
+            git pull origin main  
